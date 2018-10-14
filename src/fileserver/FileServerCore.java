@@ -8,10 +8,12 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.sql.SQLException;
 
 /**  
- * @author ³Â¼ª
- * @version ´´½¨Ê±¼ä£º2018Äê10ÔÂ13ÈÕ ÏÂÎç6:08:10
+ * @author é™ˆå‰
+ * @version åˆ›å»ºæ—¶é—´ï¼š2018å¹´9æœˆ13æ—¥ ä¸‹åˆ6:08:10
+ * Copyright (C) 2018 ChenJi. All rights reserved.
  */
 
 public class FileServerCore extends Thread{
@@ -54,7 +56,29 @@ public class FileServerCore extends Thread{
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
-		
+		try{
+			requestPro();
+		}catch(SQLException e){
+			
+		}
+	}
+	
+	public void requestPro() throws SQLException{
+		//TODOï¼šç¡®è®¤å‰ç«¯å‘æ¥çš„æ˜¯postè¿˜æ˜¯get
+		try{
+			handler = bufferedReader.readLine();
+			if(handler == "" ||handler == null){
+				handler = bufferedReader.readLine();
+			}
+			if(handler.contains("POST")){
+				
+			}
+			if(handler.contains("GET")){
+				
+			}
+		}catch(IOException e){
+			e.printStackTrace();
+		}
 	}
 	
 	
