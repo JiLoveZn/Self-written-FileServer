@@ -90,12 +90,21 @@ public class FileServerCore extends Thread{
 			handler = bufferedReader.readLine();
 			if(handler.contains("{")){
 				handler = bufferedReader.readLine();
-				requestType = handler.substring(handler.indexOf(""), handler.indexOf("\","));
+				requestType = handler.substring(handler.indexOf(":\""), handler.indexOf("\","));
+				//TODO:∂¡»°POST«Î«Û
+				readPostRequest();
 			}
-		}while(handler.contains("}"));
+			if(handler.contains("}")){
+				break;
+			}
+		}while(true);
 	}
 	
 	public void doGet() throws IOException,SQLException{
+		
+	}
+	
+	public void readPostRequest() throws IOException,SQLException{
 		
 	}
 }
