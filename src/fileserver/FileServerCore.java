@@ -11,8 +11,8 @@ import java.net.Socket;
 import java.sql.SQLException;
 
 /**  
- * @author é™ˆå‰
- * @version åˆ›å»ºæ—¶é—´ï¼š2018å¹´9æœˆ13æ—¥ ä¸‹åˆ6:08:10
+ * @author ³Â¼ª
+ * @version ´´½¨Ê±¼ä£º2018Äê9ÔÂ13ÈÕ ÏÂÎç6:08:10
  * Copyright (C) 2018 ChenJi. All rights reserved.
  */
 
@@ -30,6 +30,8 @@ public class FileServerCore extends Thread{
 	private String fileType;
 	private String filePath;
 	private String requestType;
+	
+	private final String WRAP ="\r\n";
 	
 	public FileServerCore(){
 		super();
@@ -59,27 +61,35 @@ public class FileServerCore extends Thread{
 		try{
 			requestPro();
 		}catch(SQLException e){
-			
+			e.printStackTrace();
+			System.out.println("·¢ÉúSQLÒì³£");
 		}
 	}
 	
 	public void requestPro() throws SQLException{
-		//TODOï¼šç¡®è®¤å‰ç«¯å‘æ¥çš„æ˜¯postè¿˜æ˜¯get
+		//TODO:È·ÈÏÇ°¶Ë·¢À´µÄÊÇpost»¹ÊÇget
 		try{
 			handler = bufferedReader.readLine();
-			if(handler == "" ||handler == null){
+			if(handler.equals("") || handler.equals(null) || handler.equals(WRAP)){
 				handler = bufferedReader.readLine();
 			}
 			if(handler.contains("POST")){
-				
+				//TODO:doPost
 			}
 			if(handler.contains("GET")){
-				
+				//TODO:doGet
 			}
 		}catch(IOException e){
 			e.printStackTrace();
+			System.out.println("·¢ÉúIOÒì³£");
 		}
 	}
 	
+	public void doPost() throws IOException,SQLException{
+		
+	}
 	
+	public void doGet() throws IOException,SQLException{
+		
+	}
 }
