@@ -86,7 +86,12 @@ public class FileServerCore extends Thread{
 	}
 	
 	public void doPost() throws IOException,SQLException{
-		
+		do{
+			handler = bufferedReader.readLine();
+			if(handler.contains("{")){
+				
+			}
+		}while(handler.contains("}"));
 	}
 	
 	public void doGet() throws IOException,SQLException{
