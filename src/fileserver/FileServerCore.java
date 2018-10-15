@@ -89,7 +89,8 @@ public class FileServerCore extends Thread{
 		do{
 			handler = bufferedReader.readLine();
 			if(handler.contains("{")){
-				
+				handler = bufferedReader.readLine();
+				requestType = handler.substring(handler.indexOf(""), handler.indexOf("\","));
 			}
 		}while(handler.contains("}"));
 	}
