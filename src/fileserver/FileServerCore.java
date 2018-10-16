@@ -105,6 +105,7 @@ public class FileServerCore extends Thread{
 	}
 	
 	public void readPostRequest() throws IOException,SQLException{
+		PostRequestPro postRequestPro = new PostRequestPro();
 		
 	}
 }
