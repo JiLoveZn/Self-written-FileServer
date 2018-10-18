@@ -1,7 +1,9 @@
 package fileserver;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -106,6 +108,7 @@ public class FileServerCore extends Thread{
 	
 	public void readPostRequest() throws IOException,SQLException{
 		PostRequestPro postRequestPro = new PostRequestPro();
+		BufferedReader bufferedReader_postRequest = new BufferedReader(new FileReader(new File("")));
 		
 	}
 }
